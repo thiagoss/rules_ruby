@@ -14,6 +14,12 @@ exports_files([
     "bundled_commands/rake_input",
 ])
 
+filegroup(
+    name = "data-baz",
+    srcs = ["data/baz.yml"],
+    visibility = ["//visibility:public"],
+)
+
 #
 # Dependency Graph::
 #

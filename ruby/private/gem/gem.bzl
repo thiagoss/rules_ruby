@@ -10,7 +10,7 @@ def _rb_build_gem_impl(ctx):
     _inputs = [ctx.file._gem_runner, metadata_file, gemspec]
     _srcs = []
     for dep in ctx.attr.deps:
-        file_deps = dep.files.to_list()
+        file_deps = dep.files.to_list() + dep.data_runfiles.files.to_list()
         _inputs.extend(file_deps)
         for f in file_deps:
             dest_path = strip_short_path(f.short_path, ctx.attr.strip_paths)

@@ -48,3 +48,14 @@ gemspec_test(
         "//ruby/tests/gemspec/lib:example_gem",
     ],
 )
+
+gemspec_test(
+    name = "data_test",
+    authors = ["Coinbase"],
+    gem_name = "data_gem",
+    require_paths = ["ruby/tests/gemspec/lib"],
+    version = "0.1.0",
+    deps = [
+        "//ruby/tests/gemspec/lib:example_gem_with_data",
+    ],
+)
